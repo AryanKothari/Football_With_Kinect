@@ -36,7 +36,6 @@ void draw()
 {
   background(soccer);
   ball.Draw();
-  player.Draw();
 
   img = kinect.getDepthImage();
   image(img, 0, 0);
