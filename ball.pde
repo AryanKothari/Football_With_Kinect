@@ -1,7 +1,7 @@
 class ball
 {
   private float _x = 250;
-  private float _y = 850;
+  private float _y = 860;
   private boolean _move = false;
 
   ball(float x, float y, boolean move)

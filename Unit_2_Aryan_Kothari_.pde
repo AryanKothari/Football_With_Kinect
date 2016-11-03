@@ -29,13 +29,14 @@ void setup()
   kinect.initDepth();
 
   ball = new ball(x, y, move);
-  player = new player(10,height);
+  player = new player(10,800, true);
 }
 
 void draw()
 {
   background(soccer);
-  ball.Draw();
+  ball.Draw();  
+  player.Draw();
 
   img = kinect.getDepthImage();
   image(img, 0, 0);
@@ -56,13 +57,10 @@ void draw()
   fill(100, 250, 50, 200);
   noStroke();
   ellipse(v2.x, v2.y, 20, 20);
-
-
   if (keyPressed)
   {
-    ball.hit();
+    player.Move();
   }
-  ball.Goal();
 } 
 
 

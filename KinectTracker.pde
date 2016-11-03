@@ -104,12 +104,12 @@ class KinectTracker {
         int rawDepth = depth[offset];
         int pix = x + y * display.width;
         if (rawDepth < maxthreshold && rawDepth > minthreshold) {
-          // A red color instead
           display.pixels[pix] = color(150, 50, 50);
+          //player.Move();
         } else if (rawDepth < maxthreshold2 && rawDepth > minthreshold2)
         {
           display.pixels[pix] = color(0, 0, 255);
-          ball.hit();
+          //ball.hit();
         } 
         else 
         {
