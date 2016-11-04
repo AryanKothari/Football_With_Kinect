@@ -1,6 +1,6 @@
 class ball
 {
-  private float _x = 250;
+  private float _x = 500;
   private float _y = 860;
   private boolean _move = false;
 
@@ -17,16 +17,21 @@ class ball
   }
   public void hit()
   {
-      _x = _x + 0.0005;
-      _y = _y - 0.0001;
+      _x = _x + 10;
+      _y = _y - 5;
   }
-  public void Goal()
+  
+  public void restart()
   {
-    if (_x == 1350)
+    if(_x > width)
     {
-      _x = 50;
-      _y = 850;
-      
+      _x = 500;
+      _y =860;
     }
+  }
+  
+  public float ballx()
+  {
+    return _x;
   }
 }

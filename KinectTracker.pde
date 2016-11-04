@@ -26,6 +26,8 @@ class KinectTracker {
   // What we'll show the user
   PImage display;
 
+  boolean moveplayer = false;
+  boolean moveball = false;
   KinectTracker() {
     // This is an awkard use of a global variable here
     // But doing it this way for simplicity
@@ -104,19 +106,36 @@ class KinectTracker {
         int rawDepth = depth[offset];
         int pix = x + y * display.width;
         if (rawDepth < maxthreshold && rawDepth > minthreshold) {
-          display.pixels[pix] = color(150, 50, 50);
-          //player.Move();
+          display.pixels[pix] = color(255, 0, 0);
+          moveplayer = true;
         } else if (rawDepth < maxthreshold2 && rawDepth > minthreshold2)
         {
           display.pixels[pix] = color(0, 0, 255);
-          //ball.hit();
-        } 
-        else 
+          moveball = true;
+        } else 
         {
           display.pixels[pix] = img.pixels[offset];
         }
       }
     }
+
+    if (moveplayer)
+    {
+      player.Move();
+      moveplayer = false;
+    }
+    if (moveball)
+    {
+      if (player.xvalue() > 420)
+      {
+        ball.hit();
+        moveball = true;
+        player.restart();
+      }
+      moveball = false;
+    }
+
+
     display.updatePixels();
 
     // Draw the image

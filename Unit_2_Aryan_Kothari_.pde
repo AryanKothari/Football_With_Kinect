@@ -29,7 +29,7 @@ void setup()
   kinect.initDepth();
 
   ball = new ball(x, y, move);
-  player = new player(10,800, true);
+  player = new player(10, 800, true);
 }
 
 void draw()
@@ -57,10 +57,9 @@ void draw()
   fill(100, 250, 50, 200);
   noStroke();
   ellipse(v2.x, v2.y, 20, 20);
-  if (keyPressed)
-  {
-    player.Move();
-  }
+  
+  ball.restart();
+  player.restart();
 } 
 
 
