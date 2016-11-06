@@ -28,6 +28,11 @@ class player
       move = false;
       readytohit = true;
     }
+    
+    if (_x < 420)
+    {
+      move = true;
+    }
   }
 
   public float xvalue()

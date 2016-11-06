@@ -41,8 +41,7 @@ void draw()
   img = kinect.getDepthImage();
   image(img, 0, 0);
 
-  fill(0, 0, 0);
-  ellipse(1350, 590, 50, 50);
+
 
   tracker.track();
   tracker.display();
@@ -58,8 +57,7 @@ void draw()
   noStroke();
   ellipse(v2.x, v2.y, 20, 20);
   
-  ball.restart();
-  player.restart();
+
 } 
 
 

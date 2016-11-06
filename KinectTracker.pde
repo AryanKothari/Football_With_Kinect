@@ -14,6 +14,8 @@ class KinectTracker {
   // Raw location
   PVector loc;
 
+  int score = 0;
+
   int minthreshold = 800;
   int minthreshold2 = 500;
 
@@ -41,6 +43,10 @@ class KinectTracker {
   }
 
   void track() {
+
+    fill (0, 0, 0);
+    textSize(100);
+    text(score, 1000, 300);
     // Get the raw depth as array of integers
     depth = kinect.getRawDepth();
 
@@ -131,8 +137,17 @@ class KinectTracker {
         ball.hit();
         moveball = true;
         player.restart();
+        if (ball.ballx() > width)
+        {
+          moveball = false; 
+          ball.restart();
+
+          score = score + 1;
+        }
+      } else 
+      {
+        moveball = false;
       }
-      moveball = false;
     }
 
 
