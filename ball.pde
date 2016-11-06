@@ -1,7 +1,7 @@
 class ball
 {
-  private float _x = 500;
-  private float _y = 860;
+  private float _x = width/2.88;
+  private float _y = height/1.046;
   private boolean _move = false;
 
   ball(float x, float y, boolean move)
@@ -13,20 +13,20 @@ class ball
   public void Draw()
   {
     fill(255, 255, 255);
-    ellipse(_x, _y, 50, 50);
+    ellipse(_x, _y, width/28.8, height/18);
   }
   public void hit()
   {
-    _x = _x + 10;
-    _y = _y - 5;
+    _x = _x + width/144;
+    _y = _y - height/180;
   }
 
   public void restart()
   {
     if (_x > width)
     {
-      _x = 500;
-      _y =860;
+      _x = width/2.88;
+      _y = height/1.046;
     }
   }
 

@@ -8,16 +8,16 @@
 class KinectTracker {
 
   // Depth threshold
-  int maxthreshold = 900;
-  int maxthreshold2 = 800;
+  int maxthreshold = 800;
+  int maxthreshold2 = 600;
 
   // Raw location
   PVector loc;
 
   int score = 0;
 
-  int minthreshold = 800;
-  int minthreshold2 = 500;
+  int minthreshold = 750;
+  int minthreshold2 = 400;
 
   // Interpolated location
   PVector lerpedLoc;
@@ -132,7 +132,7 @@ class KinectTracker {
     }
     if (moveball)
     {
-      if (player.xvalue() > 420)
+      if (player.xvalue() > width/3.42)
       {
         ball.hit();
         moveball = true;
@@ -143,6 +143,10 @@ class KinectTracker {
           ball.restart();
 
           score = score + 1;
+          
+          maxthreshold = int(random(700,1000));
+          minthreshold = maxthreshold - 50;
+          
         }
       } else 
       {
