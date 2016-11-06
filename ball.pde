@@ -12,24 +12,24 @@ class ball
 
   public void Draw()
   {
-    fill(255,255,255);
+    fill(255, 255, 255);
     ellipse(_x, _y, 50, 50);
   }
   public void hit()
   {
-      _x = _x + 10;
-      _y = _y - 5;
+    _x = _x + 10;
+    _y = _y - 5;
   }
-  
+
   public void restart()
   {
-    if(_x > width)
+    if (_x > width)
     {
       _x = 500;
       _y =860;
     }
   }
-  
+
   public float ballx()
   {
     return _x;

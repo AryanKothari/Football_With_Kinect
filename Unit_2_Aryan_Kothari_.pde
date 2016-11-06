@@ -1,3 +1,10 @@
+/*
+Hey Folks! This is my first project in which I used a kinect! For this project, it is 
+ an interactive soccer game. First, stand in the red zone to move your player towards 
+ the ball. Once positioned, Go Ahead and Kick! Lets see how many you can score summoner;)
+ Made it you by Aryan Kothari 
+ */
+
 import org.openkinect.freenect.*;
 import org.openkinect.freenect2.*;
 import org.openkinect.processing.*;
@@ -56,10 +63,4 @@ void draw()
   fill(100, 250, 50, 200);
   noStroke();
   ellipse(v2.x, v2.y, 20, 20);
-  
-
 } 
-
-
-//Set one threshold and if average point is in that threshold, the player will move forwards towards the ball.
-//when the player is in collision with the ball and he enters the second threshold the ball is kicked

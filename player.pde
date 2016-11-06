@@ -28,7 +28,7 @@ class player
       move = false;
       readytohit = true;
     }
-    
+
     if (_x < 420)
     {
       move = true;
@@ -39,10 +39,10 @@ class player
   {
     return _x;
   }
-  
-   public void restart()
+
+  public void restart()
   {
-    if(ball.ballx() > width)
+    if (ball.ballx() > width)
     {
       _x = 50;
       _y =840;
